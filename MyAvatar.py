@@ -25,6 +25,16 @@ def print_body(height,hand):
         else:
             print('  '+ ('X' * 6))
 
+#Revert the shoe string for right shoe
+def reverse_shoe(shoe_string):
+    return shoe_string[::-1]
+
+##Print legs with both shoe and reversed shoe
+def print_legs(shoe,reversed):
+    print((' ' * 3) + ('=' * 4))
+    for index in range(0,3):
+        print ((' ' * 2) + '|' + '' + '|' + '  ' +  '|' +  '' + '|')
+    print(shoe + '  ' + reversed)
 
 
 def main ():
@@ -33,11 +43,12 @@ def main ():
     hair = input("Please choose a character for the hair of your avatar: ")
     eyes = input("Please choose a character for the eyes of your avatar: ")
     hand = input("Please choose a character for the hand of your avatar: ")
-    #shoe = input("Please choose four characters for the shoes of your avatar: ")
+    shoe = input("Please choose four characters for the shoes of your avatar: ")
+    reversed= reverse_shoe(shoe)
     #segment = (height - 11) // 2
     print_head(hair,eyes)
     print_body(height,hand)
-
+    print_legs(shoe,reversed)
 
 
 main()
